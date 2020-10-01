@@ -3,6 +3,7 @@
       <el-col :span="12">
         <div class="sub-title">list suggestions when activated</div>
         <el-autocomplete
+          id="inline-input"
           class="inline-input"
           v-model="search"
           :fetch-suggestions="querySearch"

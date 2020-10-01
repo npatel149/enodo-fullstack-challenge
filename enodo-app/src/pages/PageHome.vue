@@ -2,7 +2,7 @@
   <div class="home">
     <h1>To Get Other Attractive Properties.
       <el-button
-        type="warning">
+        type="warning" id="cta-button">
         <router-link
           :to="{name:'PropertyList'}"
         >

@@ -14,12 +14,12 @@
       type="primary"
       class="button"
       v-if="!propertyInfo.is_selected"
-      round>Select</el-button>
+      round id="select_button">Select</el-button>
       <el-button
       type="success"
       class="button"
       v-else
-      round>Selected</el-button>
+      round id="selected_button">Selected</el-button>
 
     </div>
 
