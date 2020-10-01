@@ -1,0 +1,8 @@
+.env
+
+.venv/*
+.idea
+ref_notes/*
+*/__pycache__/*
+*/*/__pycache__/*
+*/*/*/__pycache__/*
