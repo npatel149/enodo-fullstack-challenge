@@ -10,5 +10,5 @@ dfs = pd.read_excel(file_name, sheet_name=None)
 for table, df in dfs.items():
     df.index = df.index + 1
     df.index.names = ['id']
-    df.to_sql(table, db)
+    df.to_sql('PropertyInfo', db)
 print("Great News, Completed!")
