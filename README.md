@@ -1,3 +1,78 @@
+# :point_right: Enodo App Intallation Steps :star_struck: : Enodo Fullstack Engineering Challenge :white_check_mark:
+
+## Requirements (Develompment Tools)
+
+This App was devepled with the following dev tools:
+- node 12.17.0
+- npm 6.14.4
+- Python 3.8.0
+- Docker v19.03.12
+- docker-compose v1.27.2
+- GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin19) (optional dependency used by install presetup script)
+
+## NOTE: The first step, Clone the repo if you have not. :innocent:
+
+## PreSetup (optional)
+To convert Given xlsx input data file to sqlite3 db and install application dependencies, navigate to the root directory of the repo and execute the following command.
+```
+./pre_setup.sh
+```
+## Serve App Locally via Docker Compose
+
+The Enodo App will be run locally on your pc soon, needs to navigate to the root directory of the repo and execute the following commands:
+### Start serve the app (Spin up and Start development servers)
+```
+docker-compose up -d --build
+```
+This command starts build the docker images with the name `enodo-fullstack-challenge_web` for Back-end (Python:3.8 image for Django Rest Framework) and `enodo-fullstack-challenge_web-ui` for Front-end (node:12.2.0-alpine image for VueJs 2) based on thier Dockerfiles. And also starts development servers: `enodo-api` (Back-end APIs) and `enodo-gui` (Front-end GUI).
+
+### Stop serve the app (Stop development servers)
+```
+docker-compose down -v
+```
+This command stops the docker containers (development servers) `enodo-api` (Back-end APIs) and `enodo-gui`. But, the docker images should be there with the name `enodo-fullstack-challenge_web` for Back-end (Python:3.8 image for Django Rest Framework) and `enodo-fullstack-challenge_web-ui` for Front-end (node:12.2.0-alpine image for VueJs 2).
+
+NOTE: (__*For start again development servers*__), just need to execte the command:  ```docker-compose up -d``` without create/build the images.
+
+### E2E Testing
+Comming soon...
+
+## Serve App Locally without Docker Compose
+
+1. __PreSetup__: 
+To convert Given xlsx input data file to sqlite3 db and install application dependencies, navigate to the root directory of the repo and execute the following command.
+```
+./pre_setup.sh
+```
+2. __Activate virtual python env__ (.venv): 
+Navigate to the root directory of the repo and execute the following command.
+```
+source enodo-api/.venv/bin/activate
+```
+3. __Start Back-end Server__: 
+Open new terminal, Navigate to the root directory of the repo and execute the following commands. (:warning:.venv should be activated, if not then ref step: 2)
+```
+cd enodo-api
+python3 manage.py runserver 9000
+```
+4. __Start Front-end Server__: 
+Open new terminal, Navigate to the root directory of the repo and execute the following commands. (:warning:`npm install` should be executed via step: 1)
+```
+cd enodo-app
+npm run serve -- --port 9001
+```
+
+## Back-end server URLs :star_struck:
+The Back-end REST APIs should be available at http://localhost:9000/.
+- The Admin Interface should be available at http://localhost:9000/admin/ .  
+  - usr:pass -- admin:admin
+- The Swagger Docs should be available at http://localhost:9000/swagger/.
+- The ReDoc should be available at http://localhost:9000/redoc/.
+## Font-end server URLs :star_struck:
+The Enodo Application should be available at http://localhost:9001/.
+
+## :tada: Finally, The Enodo Application should be available at http://localhost:9001/. :star_struck:
+
 # Enodo Fullstack Engineering Challenge
 
 Welcome to our Fullstack Engineering Challenge repository. This README will guide you on how to participate in this challenge.
@@ -8,18 +83,22 @@ Please fork this repo before you start working on the challenge. We will evaluat
 ## Challenge
 
 
-Front-end and backend to allow users to search, select, or unselect properties from the DB.
+- [x] Front-end and backend to allow users to search, select, or unselect properties from the DB.
 
 ## Requirements
-- Build frontend with Element.js and Vue.js
-- Create DB from data in excel file (suggestion: Sqlite)
-- Create API to interact with database (suggestion: falcon, flask, express...)
-- Input field with [autocomplete](https://element.eleme.io/#/en-US/component/input#autocomplete), displaying the properties from the DB through the API.
-  - On Selection of search result, save as "Selected" to DB.
-- Table Showing selected properties:
-  - Column 1: Full Address
-  - Column 2: Class Description
-  - Column 3: Delete button
-- Include a delete button to unselect property from DB.
-- Add a test to your implementation.
-- Include a Readme on how to run your solution.
+- [x] Build frontend with Element.js and Vue.js
+- [x] Create DB from data in excel file (suggestion: Sqlite)
+- [x] Create API to interact with database (suggestion: falcon, flask, express...)
+- [x] :sunglasses: Increase User Experiance, Implemeted Extra feature :sassy_man: :point_right: Input field without autocomple. which is easy to edit for any user.
+- [x] Input field with [autocomplete](https://element.eleme.io/#/en-US/component/input#autocomplete), displaying the properties from the DB through the API.
+  - [x] On Selection of search result, save as "Selected" to DB.
+  - [x] :sunglasses: Increase User Experiance, Implemeted Extra feature :sassy_man: :point_right:Easy route to `PropertyDetialPage` and "Select/Selected" action from there too. 
+  - [x] :star_struck: Increase User Attraction :sassy_man: :point_right: Used robots images as placeholders of propertyImages on each propertyCard.
+- [x] Table Showing selected properties:
+  - [x] Column 1: Full Address
+  - [x] Column 2: Class Description
+  - [x] Column 3: Delete button
+  - [x] :sunglasses: Increase User Experiance, Implemeted Extra feature :sassy_man: :point_right: Added Details button. 
+- [x] Include a delete button to unselect property from DB.
+- [ ] Add a test to your implementation.
+- [X] Include a Readme on how to run your solution.
