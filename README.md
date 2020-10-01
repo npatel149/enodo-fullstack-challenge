@@ -12,12 +12,18 @@ This App was devepled with the following dev tools:
 
 ## NOTE: The first step, Clone the repo if you have not. :innocent:
 
-## PreSetup (optional)
+## :warning: PreSetup (Required) 
 To convert Given xlsx input data file to sqlite3 db and install application dependencies, navigate to the root directory of the repo and execute the following command.
 ```
 ./pre_setup.sh
 ```
-## Serve App Locally via Docker Compose
+__Note__: you may get the following known errors because we have `db.sqlite3` file is existed in the `enodo-api` directory. Please, ignore the error. since existing `db.sqlite3` file is good to go. :innocent: 
+```
+ValueError: Table 'PropertyInfo' already exists.
+System check identified some issues:
+```
+# Serve the App Locally via following ways:
+## 1. With using Docker Compose
 
 The Enodo App will be run locally on your pc soon, needs to navigate to the root directory of the repo and execute the following commands:
 ### Start serve the app (Spin up and Start development servers)
@@ -37,7 +43,7 @@ NOTE: (__*For start again development servers*__), just need to execte the comma
 ### E2E Testing
 Comming soon...
 
-## Serve App Locally without Docker Compose
+## 2. Without using Docker Compose
 
 1. __PreSetup__: 
 To convert Given xlsx input data file to sqlite3 db and install application dependencies, navigate to the root directory of the repo and execute the following command.
