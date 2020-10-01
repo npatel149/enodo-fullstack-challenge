@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +25,9 @@ SECRET_KEY = 'q+@!&gx+rf8*tgob-c$2=*)$3_r#dqa=yac=b_b(hg8mjk0v9v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '0.0.0.0', '127.0.0.1']
+TEMPLATE_DEBUG = True
+
+ALLOWED_HOSTS = ['localhost', '0.0.0.0', '127.0.0.1', '*']
 
 
 # Application definition
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'propertyapp.apps.PropertyappConfig',
 ]
+
 
 MIDDLEWARE = [
     # CORS
@@ -62,6 +65,7 @@ CORS_ORIGIN_WHITELIST = (
 CORS_ALLOW_CREDENTIALS = False
 
 ROOT_URLCONF = 'enodoapi.urls'
+WSGI_APPLICATION = 'enodoapi.wsgi.application'
 
 TEMPLATES = [
     {
@@ -88,7 +92,7 @@ WSGI_APPLICATION = 'enodoapi.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'db234.sqlite3'),
     }
 }
 
