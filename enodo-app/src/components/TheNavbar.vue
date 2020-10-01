@@ -12,6 +12,12 @@
       <router-link :to="{name:'Home'}"><img src="../assets/logo_green.svg" height="40px" alt="enodo_logo"/></router-link>
     </el-menu-item>
     <el-menu-item index="3">
+      <router-link :to="{name:'PropertyList'}">Property</router-link>
+    </el-menu-item>
+    <el-menu-item index="4">
+      <router-link :to="{name:'PropertyListTable'}">Selected</router-link>
+    </el-menu-item>
+    <el-menu-item index="5">
       <router-link :to="{name:'About'}">About</router-link>
     </el-menu-item>
   </el-menu>

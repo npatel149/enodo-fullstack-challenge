@@ -1,18 +1,29 @@
 <template>
   <div class="home">
-    <img alt="Enodo logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>To Get Other Attractive Properties.
+      <el-button
+        type="warning">
+        <router-link
+          :to="{name:'PropertyList'}"
+        >
+          Please, Click Here!
+        </router-link>
+      </el-button>
+    </h1>
+    <div>
+      <PropertySearchSuggestions/>
+    </div>
   </div>
 </template>
 
 <script>
   // @ is an alias to /src
-  import HelloWorld from '@/components/HelloWorld.vue'
+  import PropertySearchSuggestions from "@/components/PropertySearchSuggestions.vue";
 
   export default {
     name: 'Home',
     components: {
-      HelloWorld
+      PropertySearchSuggestions,
     }
   }
 </script>
