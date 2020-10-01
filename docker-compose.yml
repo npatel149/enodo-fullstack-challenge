@@ -1,0 +1,19 @@
+version: '3.7'
+
+services:
+  web:
+    container_name: enodo-api
+    build: ./enodo-api
+    command: python manage.py runserver 0.0.0.0:9000
+    volumes:
+      - ./enodo-api:/usr/src/app/
+    ports:
+      - "9000:9000"
+  web-ui:
+    container_name: enodo-gui
+    build: ./enodo-app
+    volumes:
+      - './enodo-app:/app'
+      - './enodo-app/node_modules:/app/node_modules'
+    ports:
+      - '9001:8080'
