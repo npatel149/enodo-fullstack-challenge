@@ -7,8 +7,8 @@ This App was devepled with the following dev tools:
 - npm 6.14.4
 - Python 3.8.0
 - Docker v19.03.12
-- docker-compose v1.27.2
-- GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin19) (optional dependency used by install presetup script)
+- docker-compose v1.27.2 (optional if you're going to choose step:2)
+- GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin19) (for dependency installation by pre_setup script)
 
 ## NOTE: The first step, Clone the repo if you have not. :innocent:
 
@@ -40,8 +40,6 @@ This command stops the docker containers (development servers) `enodo-api` (Back
 
 NOTE: (__*For start again development servers*__), just need to execte the command:  ```docker-compose up -d``` without create/build the images.
 
-### E2E Testing
-Comming soon...
 
 ## 2. Without using Docker Compose
 
@@ -67,6 +65,8 @@ Open new terminal, Navigate to the root directory of the repo and execute the fo
 cd enodo-app
 npm run serve -- --port 9001
 ```
+## E2E Testing
+Follow the instructions: See README.md file in `tests` directory.
 
 ## Back-end server URLs :star_struck:
 The Back-end REST APIs should be available at http://localhost:9000/.
@@ -78,6 +78,8 @@ The Back-end REST APIs should be available at http://localhost:9000/.
 The Enodo Application should be available at http://localhost:9001/.
 
 ## :tada: Finally, The Enodo Application should be available at http://localhost:9001/. :star_struck:
+
+
 
 # Enodo Fullstack Engineering Challenge
 
@@ -95,16 +97,34 @@ Please fork this repo before you start working on the challenge. We will evaluat
 - [x] Build frontend with Element.js and Vue.js
 - [x] Create DB from data in excel file (suggestion: Sqlite)
 - [x] Create API to interact with database (suggestion: falcon, flask, express...)
-- [x] :sunglasses: Increase User Experiance, Implemeted Extra feature :sassy_man: :point_right: Input field without autocomple. which is easy to edit for any user.
 - [x] Input field with [autocomplete](https://element.eleme.io/#/en-US/component/input#autocomplete), displaying the properties from the DB through the API.
   - [x] On Selection of search result, save as "Selected" to DB.
-  - [x] :sunglasses: Increase User Experiance, Implemeted Extra feature :sassy_man: :point_right:Easy route to `PropertyDetialPage` and "Select/Selected" action from there too. 
-  - [x] :star_struck: Increase User Attraction :sassy_man: :point_right: Used robots images as placeholders of propertyImages on each propertyCard.
 - [x] Table Showing selected properties:
   - [x] Column 1: Full Address
   - [x] Column 2: Class Description
   - [x] Column 3: Delete button
-  - [x] :sunglasses: Increase User Experiance, Implemeted Extra feature :sassy_man: :point_right: Added Details button. 
 - [x] Include a delete button to unselect property from DB.
-- [ ] Add a test to your implementation.
-- [X] Include a Readme on how to run your solution.
+- [x] Add a test to your implementation.
+- [x] Include a Readme on how to run your solution.
+
+## Some Extra Features :star_struck:
+### Front-end
+- [x] :sunglasses: Increase User Experiance, Implemeted Extra feature :sassy_man: :point_right: Input field without autocomple. which is easy to edit for any user.
+- [x] :sunglasses: Increase User Experiance, Implemeted Extra feature :sassy_man: :point_right:Easy route to `PropertyDetialPage` and "Select/Selected" action from there too. 
+- [x] :star_struck: Increase User Attraction :sassy_man: :point_right: Used robots images as placeholders of propertyImages on each propertyCard.
+- [x] :sunglasses: Increase User Experiance, Implemeted Extra feature :sassy_man: :point_right: Added Details button at Column 3: on Table Showing selected properties.
+### Back-end (would be easy for front-end devs)
+- [x] :star_struck: Implemeted Swagger and ReDoc endpoint
+  - The Swagger Docs should be available at http://localhost:9000/swagger/.
+  - The ReDoc should be available at http://localhost:9000/redoc/.
+- [x] :cool: Search and Ordering filter for the property endpoint.
+  - e.g.:
+    - http://localhost:9000/property/?search=TAYLOR
+    - http://localhost:9000/property/?search=TAYLOR&ordering=-longitude
+    - http://localhost:9000/property/?ordering=-longitude
+- [x] :cool: Get REST API Response in json/api format.
+  - e.g:
+    - http://localhost:9000/property/?ordering=-longitude&format=json
+    - http://localhost:9000/property/?format=api
+   
+  
